@@ -479,6 +479,13 @@ pub enum Commands {
         ),
     )]
     Help(HelpArgs),
+    Just(JustArgs),
+}
+
+#[derive(Args, Debug)]
+pub struct JustArgs {
+    #[arg(trailing_var_arg = true, allow_hyphen_values = true)]
+    pub args: Vec<OsString>,
 }
 
 #[derive(Args, Debug)]

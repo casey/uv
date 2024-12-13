@@ -116,6 +116,7 @@ indoc = { version = "2.0.5" }
 itertools = { version = "0.13.0" }
 jiff = { version = "0.1.14", features = ["serde"] }
 junction = { version = "1.2.0" }
+just = "1.38.0"
 krata-tokio-tar = { version = "0.4.2" }
 mailparse = { version = "0.15.0" }
 md-5 = { version = "0.10.6" }
