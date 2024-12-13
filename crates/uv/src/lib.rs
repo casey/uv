@@ -290,6 +290,12 @@ async fn run(mut cli: Cli) -> Result<ExitStatus> {
             printer,
             args.no_pager,
         ),
+        Commands::Just(args) => {
+            match just::run(std::iter::once("uv".into()).chain(args.args)) {
+                Ok(()) => Ok(ExitStatus::Success),
+                Err(code) =>  Ok(ExitStatus::External(code as u8)),
+            }
+        }
         Commands::Pip(PipNamespace {
             command: PipCommand::Compile(args),
         }) => {
